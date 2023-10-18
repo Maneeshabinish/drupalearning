@@ -1,0 +1,15 @@
+my_custom_router.description:
+  path: '/my_custom_router'
+  defaults:
+    _controller: '\Drupal\my_custom_router\Controller\MyCustomRouterController::mytestpage'
+    _title: 'Test Page'
+  requirements:
+    _permission: 'access content'
+
+my_custom_router.arguments:
+  path: '/my_custom_router/{number}/{num2}'
+  defaults:
+    _controller: '\Drupal\my_custom_router\Controller\MyCustomRouterController::arguments'
+    _title: 'Argument Test Page'
+  requirements:
+    _permission: 'access content'
