@@ -1,0 +1,30 @@
+<?php
+
+function my_custom_router_theme($existing, $type, $theme, $path) {
+
+ 
+  return [
+    
+    'demo_page' => [
+  
+
+      'variables' => [
+
+       'text' => 'Default value',
+       'arr'=> [],
+
+      ],
+    ],  
+
+    'arguments_display' => [
+
+      'variables' => [
+        'num1'=> null,
+        'num2'=> null,
+
+      ],
+    ],
+      
+  ];
+
+}

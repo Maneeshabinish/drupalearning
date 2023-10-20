@@ -5,13 +5,19 @@ use Drupal\Core\Controller\ControllerBase;
 
 class MyCustomRouterController extends ControllerBase {
   public function test_page(){
- 
-    return [
+   $array = [
+    'name' => 'Annie',
+    'id' => 3025,
+   ];
+
+    return[
       
-      '#theme' => 'test_page',
-      '#text' => 'Hello, world',
+      '#theme' => 'demo_page',
+      '#text' => 'This is a string passed using Twig template and hook_theme. The following are listed from an array.',
+      '#arr'=> $array ,
 
     ];
+     
   }
 
   public function arguments_display($first_arg, $second_arg){
