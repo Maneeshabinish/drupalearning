@@ -24,6 +24,38 @@ function my_custom_router_theme($existing, $type, $theme, $path) {
 
       ],
     ],
+
+    'custom_test_pages_content_array' => [
+      
+      'render element' => 'element',
+    ],
+    
+    
+    'item_list' => [
+      
+      'variables' => [
+        'title' => NULL,
+        'items' => NULL,
+      ],
+    ],
+
+    'custom_test_pages_list' => [
+      
+      'variables' => [
+        'title' => NULL,
+        'items' => NULL,
+      ],
+    ],
+
+
+        
+    'arguments_test_page' => [
+      
+      'variables' => [
+        'strg1' => NULL,
+        'strg2' => NULL,
+      ],
+    ],
       
   ];
 

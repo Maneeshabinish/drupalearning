@@ -1,0 +1,4 @@
+list:
+  css:
+    theme:
+      css/custom_test_pages.css: {preprocess: false}

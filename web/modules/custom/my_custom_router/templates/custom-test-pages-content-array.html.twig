@@ -1,0 +1,9 @@
+{% for item in element['#items'] %}
+  {% if not loop.index %}
+  {# The first paragraph is bolded. #}
+    <p><strong>{{ item }}</strong></p>
+  {% else %}
+  {# Following paragraphs are just output as routine paragraphs. #}
+    <p>{{ item }}</p>
+  {% endif %}
+{% endfor %}
