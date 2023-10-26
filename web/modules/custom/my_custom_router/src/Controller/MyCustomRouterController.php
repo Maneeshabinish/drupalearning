@@ -56,6 +56,16 @@ class MyCustomRouterController extends ControllerBase {
      '#url' => Url::fromRoute('custom_test_pages.argumentsTestPage', ['strg1' => 'node1', 'strg2' => 'node2']),
      '#title' => $this->t('Page rendering arguments from url'),
     ];
+    $links[] = [
+      '#type' => 'link',
+      '#url' => Url::fromRoute('custom_test_pages.TestForm'),
+      '#title' => $this->t('Test Form'),
+     ];
+     $links[] = [
+      '#type' => 'link',
+      '#url' => Url::fromRoute('custom_test_pages.SignInForm'),
+      '#title' => $this->t('Sign In'),
+     ];
    $content = [
      '#theme' => 'item_list',
      '#theme_wrappers' => ['custom_test_pages_content_array'],

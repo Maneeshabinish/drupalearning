@@ -56,6 +56,14 @@ function my_custom_router_theme($existing, $type, $theme, $path) {
         'strg2' => NULL,
       ],
     ],
+
+
+    'custom_form'  => [
+
+      'render element' => 'form',
+      'template' => 'custom-form',
+
+    ],
       
   ];
 
