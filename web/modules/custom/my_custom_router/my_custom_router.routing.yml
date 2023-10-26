@@ -40,10 +40,10 @@ custom_test_pages.argumentsTestPage:
     _permission: 'access content'
     
 custom_test_pages.TestForm:
-  path: '/custom_test_pages/form'
+  path: '/custom_test_pages/testform'
   defaults:
     _form: '\Drupal\my_custom_router\Form\TestForm'
-    _title: 'Form 1'
+    _title: 'Sign In'
   requirements:
     _permission: 'access content'
 
@@ -51,7 +51,15 @@ custom_test_pages.SignInForm:
   path: '/custom_test_pages/signin'
   defaults:
     _form: '\Drupal\my_custom_router\Form\SignInForm'
-    _title: 'Form 2'
+    _title: 'Test Form'
+  requirements:
+    _permission: 'access content'
+
+custom_test_pages.UserDetailsForm:
+  path: '/custom_test_pages/userdetails'
+  defaults:
+    _form: '\Drupal\my_custom_router\Form\UserDetailsForm'
+    _title: 'User Details'
   requirements:
     _permission: 'access content'
 
