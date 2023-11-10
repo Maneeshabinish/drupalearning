@@ -1,0 +1,12 @@
+# Permissions for the custom_address_book module
+'View module content':
+  title: View module content
+'Edit module content':
+  title: Edit module content
+'Search module content':
+  title: Search module content
+'Add module content':
+  title: Add module content  
+
+
+    

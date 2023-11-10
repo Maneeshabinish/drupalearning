@@ -26,7 +26,7 @@ custom_test_pages.list:
   path: '/custom_test_pages/list'
   defaults:
     _controller: '\Drupal\my_custom_router\Controller\MyCustomRouterController::list'
-    _title: 'Simple Page with a list'
+    _title: 'Theming a list'
   requirements:
     _permission: 'access content'
 
@@ -43,7 +43,7 @@ custom_test_pages.TestForm:
   path: '/custom_test_pages/testform'
   defaults:
     _form: '\Drupal\my_custom_router\Form\TestForm'
-    _title: 'Sign In'
+    _title: 'Test Form'
   requirements:
     _permission: 'access content'
 
@@ -51,15 +51,15 @@ custom_test_pages.SignInForm:
   path: '/custom_test_pages/signin'
   defaults:
     _form: '\Drupal\my_custom_router\Form\SignInForm'
-    _title: 'Test Form'
+    _title: 'Sign in'
   requirements:
     _permission: 'access content'
 
-custom_test_pages.UserDetailsForm:
-  path: '/custom_test_pages/userdetails'
+custom_test_pages.UserRegisterationForm:
+  path: '/custom_test_pages/user-registeration'
   defaults:
-    _form: '\Drupal\my_custom_router\Form\UserDetailsForm'
-    _title: 'User Details'
+    _form: '\Drupal\my_custom_router\Form\UserRegisterationForm'
+    _title: 'User Registeration Form'
   requirements:
     _permission: 'access content'
 

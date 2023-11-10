@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function custom_address_book_theme($existing, $type, $theme, $path) {
+  return [
+    'address_book_entries' => [
+      'variables' => [
+        'header' => NULL,
+        'rows' => NULL,
+      ],
+      'template' => 'address-book-entries', // This corresponds to the template file.
+    ],
+    
+    'birthday_list' => [
+      'variables' => [
+        
+        'names' => NULL,
+      ],
+      'template' => 'birthday-list', // This corresponds to the template file.
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_address_book_form_alter(&$form, &$form_state, $form_id) {
+  // Check if the form is the user login form.
+  if ($form_id == 'user_login_form') {
+    // Change the label for the username field.
+    $form['name']['#title'] = t('Login name');
+  }
+}
+
+
+

@@ -1,0 +1,40 @@
+custom_address_book.addressEntries:
+  path: '/addressbook'
+  defaults:
+    _controller: '\Drupal\custom_address_book\Controller\CustomAddressBookController::addressEntries'
+    _title: 'Address Entries'
+  requirements:
+    _permission: 'View module content'
+       
+custom_address_book.add:
+  path: '/addressbook/add'
+  defaults:
+    _form: '\Drupal\custom_address_book\Form\AddAddress'
+    _title: 'Add Address'
+  requirements:
+    _permission: 'Add module content '
+       
+custom_address_book.editaddress:
+  path: '/addressbook/{aid}/edit'
+  defaults:
+    _form: '\Drupal\custom_address_book\Form\EditAddress'
+    _title: 'Edit Address'
+  requirements:
+    _permission: 'Edit module content'     
+
+custom_address_book.search:
+  path: '/addressbook/search'
+  defaults:
+    _form: '\Drupal\custom_address_book\form\SearchAddress'
+    _title: 'Search Address'
+  requirements:
+    _permission: 'Search module content'
+    
+custom_address_book.searchresult:
+  path: '/addressbook/search/{searchname} '
+  defaults:
+    _controller: '\Drupal\custom_address_book\Controller\CustomAddressBookController::searchresult'
+    _title: 'Search Address'
+  requirements:
+    _permission: 'Search module content'
+  

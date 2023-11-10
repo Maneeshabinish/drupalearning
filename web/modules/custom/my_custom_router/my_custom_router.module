@@ -70,4 +70,60 @@ function my_custom_router_theme($existing, $type, $theme, $path) {
 
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function my_custom_router_preprocess_custom_form(&$variables) {
+
+  // Loop through form elements.
+  foreach ($variables['form'] as $key => $element) {
+
+    if (isset($element['#title'])) {
+        // Wrap the title in <strong> tags using the #prefix and #suffix attributes.
+        $element['title']['#prefix'] = '<strong>';
+        $element['title']['#suffix'] = '</strong>';
+        
+    // Add a class to the radio button titles.
+    if ($element['#type'] == 'radios') {
+      //  $element['#title']['#attributes']['class'][] = 'custom-radio-title';
+        $element['#attached']['library'][] = 'my_custom_router/custom-styles';
+    }
+    }
+    
+    // Assign the modified element back to the form.
+    $variables['form'][$key] = $element;
+  }
+
+}
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function my_custom_router_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'test_form') {
+     
+    $form['phone_number'] = [
+
+      '#type' => 'textfield',
+      '#title' => t('Phone Number'),
+      '#description' => t('Enter your phone number.'),
+      '#required' => TRUE,
+      '#weight' => 0,
+      '#validate' => ['validateForm'],
+    ];
+    $form['date'] = [
+
+      '#type' => 'date',
+      '#title' => t('Date of Birth'),
+      '#weight' => 0,
+    ];
+
+  }
+}
+
+
  

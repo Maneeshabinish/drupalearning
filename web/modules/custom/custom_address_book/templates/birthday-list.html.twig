@@ -1,0 +1,15 @@
+
+<div>
+    {% if names %}
+    <h5><strong>Happy Birthday!!!</strong></h5>
+        <ul>
+        {% for names in names %}
+            <li>{{ names }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+
+    <p>No Birthdays Today!</p>
+  {% endif %}
+
+</div>

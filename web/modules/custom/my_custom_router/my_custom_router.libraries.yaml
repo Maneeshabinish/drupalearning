@@ -1,0 +1,12 @@
+list:
+  css:
+    theme:
+      css/my_custom_router.css: {preprocess: false}
+
+
+
+custom-styles:
+  version: 1.x
+  css:
+    theme:
+      css/custom-radios-style.css: {preprocess: false}

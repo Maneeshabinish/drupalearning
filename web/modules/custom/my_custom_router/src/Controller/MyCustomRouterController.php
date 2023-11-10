@@ -8,22 +8,17 @@ use Drupal\Core\Url;
 
 class MyCustomRouterController extends ControllerBase {
 
-  use StringTranslationTrait;
-  public function test_page(){
+ public function test_page(){
 
     $array = [
-
       'name' => 'Annie',
       'id' => 3025,
-
     ];
 
     return[
-      
       '#theme' => 'demo_page',
       '#text' => 'This is a string passed using Twig template and hook_theme. The following are listed from an array.',
       '#arr'=> $array ,
-
     ];
      
   }
@@ -32,12 +27,10 @@ class MyCustomRouterController extends ControllerBase {
     
 
     return [
-      
       '#theme' => 'arguments_display',
       '#num1' => $first_arg,
       '#num2'=> $second_arg,
-      
-    ];
+          ];
 
   }
 
@@ -68,8 +61,8 @@ class MyCustomRouterController extends ControllerBase {
      ];
      $links[] = [
       '#type' => 'link',
-      '#url' => Url::fromRoute('custom_test_pages.UserDetailsForm'),
-      '#title' => $this->t('User Details Form'),
+      '#url' => Url::fromRoute('custom_test_pages.UserRegisterationForm'),
+      '#title' => $this->t('User Registeration Form'),
      ];
    $content = [
      '#theme' => 'item_list',
@@ -96,19 +89,17 @@ class MyCustomRouterController extends ControllerBase {
    $build['render_version'] = [
     
      '#theme' => 'item_list',
-     '#attached' => ['library' => ['custom_test_pages/list']],
      '#title' => $this->t("A list returned to be rendered using theme('item_list')"),
      '#items' => $items,
-     '#attributes' => ['class' => ['render-version-list']],
-   ];
+      ];
 
    
  
    $build['our_theme_function'] = [
 
      '#theme' => 'custom_test_pages_list',
-     '#attached' => ['library' => ['custom_test_pages/list']],
      '#title' => $this->t("The same list rendered by theme('custom_test_pages_list')"),
+     '#attached' => ['library' => ['my_custom_router/list']],
      '#items' => $items,
 
    ];
