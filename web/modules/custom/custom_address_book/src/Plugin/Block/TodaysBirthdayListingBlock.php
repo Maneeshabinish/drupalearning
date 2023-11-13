@@ -9,9 +9,9 @@ use Drupal\Core\Database\Database;
 /**
  * Provides a 'Birthday Listing Block' block.
  *
- * @TodaysBirthdayListingBlock(
+ * @Block(
  *   id = "birthday_block",
- *   admin_label = @Translation("Todays Birthday Listing Block"),
+ *   admin_label = @Translation("Todays Birthdays!!!"),
  *   category = @Translation("Custom")
  * )
  */
@@ -25,16 +25,15 @@ class TodaysBirthdayListingBlock extends BlockBase {
     $today = \Drupal::time()->getCurrentTime();
     $today_date = date('Y-m-d', $today);
 
+
     // Query the database for birthdays today.
     $query = \Drupal::database()->select('address_entry', 'a')
       ->fields('a', ['name', 'dob'])
       ->condition('a.dob', $today_date . '%', 'LIKE')
       ->execute();
 
-    $result = $query->fetchAll();
 
-    $resultString = print_r($result, true);
-    error_log('The output is: ' . $resultString);
+    $result = $query->fetchAll();
 
     $output = [];
     $names = [];
@@ -52,9 +51,15 @@ class TodaysBirthdayListingBlock extends BlockBase {
         '#names' => $names,        
       ];
 
+      
+    }else {
+      // No birthdays today.
+      $output = [
+        '#theme' => 'birthday_list',
+        '#names' => [],
+      ];
     }
-    $outputString = print_r($output, true);
-    error_log('The output is: ' . $outputString);
+
 
     return $output;
     

@@ -12,7 +12,7 @@ custom_address_book.add:
     _form: '\Drupal\custom_address_book\Form\AddAddress'
     _title: 'Add Address'
   requirements:
-    _permission: 'Add module content '
+    _permission: 'Add module content'
        
 custom_address_book.editaddress:
   path: '/addressbook/{aid}/edit'
