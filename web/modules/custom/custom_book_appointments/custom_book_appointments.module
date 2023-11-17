@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function custom_book_appointments_theme($existing, $type, $theme, $path) {
+  return [
+
+    'book_appointment'   => [
+      'variables' => ['forms' => NULL],
+    ],
+  ];
+}

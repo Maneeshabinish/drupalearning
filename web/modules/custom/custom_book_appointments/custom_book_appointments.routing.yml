@@ -1,0 +1,7 @@
+custom_book_appointments.book_appointments:
+  path: '/en/book-an-appointment'
+  defaults:
+    _controller: '\Drupal\custom_book_appointments\Controller\CustomBookAppointmentsController::book_appointments'
+  requirements:
+    _permission: 'access content'
+

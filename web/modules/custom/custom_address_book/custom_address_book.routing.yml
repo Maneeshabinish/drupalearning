@@ -26,7 +26,7 @@ custom_address_book.search:
   path: '/addressbook/search'
   defaults:
     _form: '\Drupal\custom_address_book\form\SearchAddress'
-    _title: 'Search Address'
+    _title: 'Search Address Book'
   requirements:
     _permission: 'Search module content'
     
@@ -34,7 +34,7 @@ custom_address_book.searchresult:
   path: '/addressbook/search/{searchname} '
   defaults:
     _controller: '\Drupal\custom_address_book\Controller\CustomAddressBookController::searchresult'
-    _title: 'Search Address'
+    _title: 'Search Result'
   requirements:
     _permission: 'Search module content'
   

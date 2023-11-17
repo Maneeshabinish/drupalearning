@@ -1,0 +1,5 @@
+name: Custom Book Appoinments
+type: module
+description: 'A custom module for booking appoinments'
+package: custom
+core_version_requirement: ^9 || ^10

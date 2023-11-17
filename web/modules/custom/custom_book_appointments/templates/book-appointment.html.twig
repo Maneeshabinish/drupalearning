@@ -1,0 +1,20 @@
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-book-appointment-tab" data-toggle="tab" href="#nav-book-appointment" role="tab" aria-controls="nav-book-appointment" aria-selected="true">Book An Appointment</a>
+    <a class="nav-item nav-link" id="nav-review-report-tab" data-toggle="tab" href="#nav-review-report" role="tab" aria-controls="nav-review-report" aria-selected="false">Review Medical Report</a>
+    <a class="nav-item nav-link" id="nav-general-enquiry-tab" data-toggle="tab" href="#nav-general-enquiry" role="tab" aria-controls="nav-general-enquiry" aria-selected="false">Make General Enquiry</a>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-book-appointment" role="tabpanel" aria-labelledby="nav-book-appointment-tab">
+  {{ forms.appointment_form }}
+  </div>
+  <div class="tab-pane fade" id="nav-review-report" role="tabpanel" aria-labelledby="nav-review-report-tab">
+  {{ forms.medical_review_form }}
+  </div>
+  <div class="tab-pane fade" id="nav-general-enquiry" role="tabpanel" aria-labelledby="nav-general-enquiry-tab">
+  {{ forms.general_enquiry_form }}
+  </div>
+</div>
