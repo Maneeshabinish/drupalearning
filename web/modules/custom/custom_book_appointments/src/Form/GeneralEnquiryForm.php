@@ -46,7 +46,7 @@ Class GeneralEnquiryForm extends FormBase {
 
         $form['submit'] = [
             '#type' => 'submit',
-            '#value' => t('Add Address'),
+            '#value' => t('Submit'),
         ];
 
         return $form;

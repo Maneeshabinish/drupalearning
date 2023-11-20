@@ -44,7 +44,7 @@ Class BookAppointmentForm extends FormBase {
 
         $form['submit'] = [
             '#type' => 'submit',
-            '#value' => t('Add Address'),
+            '#value' => t('Submit'),
         ];
 
         return $form;
