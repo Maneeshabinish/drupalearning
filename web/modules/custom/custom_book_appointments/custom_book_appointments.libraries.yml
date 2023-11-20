@@ -1,0 +1,16 @@
+# custom_book_appointments.libraries.yml
+custom_book_appointments_tabs:
+  version: 1.x
+  css:
+    theme:
+      css/hideform.css: {}
+      https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { type: external }
+  js:
+    https://code.jquery.com/jquery-3.3.1.slim.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js: { type: external, minified: true }
+    https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - core/popper
+
+

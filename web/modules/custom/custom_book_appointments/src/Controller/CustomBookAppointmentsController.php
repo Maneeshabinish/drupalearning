@@ -33,10 +33,18 @@ class CustomBookAppointmentsController extends ControllerBase {
         // Add GeneralEnquiryForm.
         $forms['general_enquiry_form'] = $this->formBuilder->getForm('\Drupal\custom_book_appointments\Form\GeneralEnquiryForm');
       
-        return [
-          '#theme' => 'book_appointment',
-          '#forms' => $forms,
-        ];
+        $build = [
+            '#theme' => 'book_appointment',
+            '#forms' => $forms,
+            '#attached' => [
+              'library' => [
+                'custom_book_appointments/custom_book_appointments_tabs',
+              ],
+            ],
+          ];
+      
+          return $build;
+          
     }
         
 }
