@@ -9,7 +9,7 @@ Class GeneralEnquiryForm extends FormBase {
 
     public function getFormId() {
 
-        return "general_enquiry_form";
+        return "Make_General_Enquiry";
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {

@@ -9,7 +9,7 @@ Class BookAppointmentForm extends FormBase {
 
     public function getFormId() {
 
-        return "book_appointment_form";
+        return "Book_An_Appointment";
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {

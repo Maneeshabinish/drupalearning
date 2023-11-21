@@ -1,29 +1,18 @@
 
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-book-appointment-tab" data-toggle="tab" href="#nav-book-appointment" 
-    role="tab">
-    <input type="checkbox" id="checkbox-book-appointment" checked>Book An Appointment</a>
-
-    <a class="nav-item nav-link" id="nav-review-report-tab" data-toggle="tab" href="#nav-review-report" 
-    role="tab">
-     <input type="checkbox" id="checkbox-review-report">Review Medical Report</a>
-
-    <a class="nav-item nav-link" id="nav-general-enquiry-tab" data-toggle="tab" href="#nav-general-enquiry" 
-    role="tab">
-    <input type="checkbox" id="checkbox-general-enquiry">Make General Enquiry</a>
-    
+    {% for form_id, form in forms %}
+      <a class="nav-item nav-link {% if loop.first %}active{% endif %}" id="nav-{{ form_id }}-tab" data-toggle="tab" href="#nav-{{ form_id }}" role="tab">
+        <input type="checkbox" id="checkbox-{{ form_id }}" {% if loop.first %}checked{% endif %}>{{ form_id|replace({'_': ' '}) }}
+      </a>
+    {% endfor %}
   </div>
 </nav>
 
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-book-appointment" role="tabpanel">
-  {{ forms.appointment_form }}
-  </div>
-  <div class="tab-pane fade" id="nav-review-report" role="tabpanel">
-  {{ forms.medical_review_form }}
-  </div>
-  <div class="tab-pane fade" id="nav-general-enquiry" role="tabpanel">
-  {{ forms.general_enquiry_form }}
-  </div>
+  {% for form_id, form in forms %}
+    <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="nav-{{ form_id }}" role="tabpanel">
+      {{ form }}
+    </div>
+  {% endfor %}
 </div>

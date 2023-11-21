@@ -9,7 +9,7 @@ Class ReviewMedicalForm extends FormBase {
 
     public function getFormId() {
 
-        return "review_medical_form";
+        return "Review_Medical_Report";
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
