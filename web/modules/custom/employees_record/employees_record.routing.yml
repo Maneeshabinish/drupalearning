@@ -1,0 +1,31 @@
+employees_record.importPage:
+  path: '/import'
+  defaults:
+    _controller: '\Drupal\employees_record\Controller\EmployeesRecordController::importPage'
+    _title: 'Import Page'
+  requirements:
+    _permission: 'Access import page'
+
+employees_record.personalinfo:
+  path: '/personal-information'
+  defaults:
+    _form: '\Drupal\employees_record\Form\PersonalInfoForm'
+    _title: 'Personal Information'
+  requirements:
+    _permission: 'access content'
+
+employees_record.salarylist:
+  path: '/salaryrecord'
+  defaults:
+    _controller: '\Drupal\employees_record\Controller\EmployeesRecordController::salarylist'
+    _title: 'Salary Record'
+  requirements:
+    _permission: 'View content'
+       
+employees_record.operations:
+  path: '/salaryrecord/{id}/{operation}'
+  defaults:
+    _form: '\Drupal\employees_record\Form\SalaryForm'
+    _title: 'Operations Form'
+  requirements:
+    _permission: 'Modify content'

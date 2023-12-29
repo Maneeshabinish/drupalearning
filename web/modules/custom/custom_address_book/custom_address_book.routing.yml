@@ -38,3 +38,20 @@ custom_address_book.searchresult:
   requirements:
     _permission: 'Search module content'
   
+custom_address_book.managepage:
+  path: '/manage '
+  defaults:
+    _controller: '\Drupal\custom_address_book\Controller\CustomAddressBookController::managepage'
+    _title: 'Manage Address Book'
+  requirements:
+    _permission: 'access content'     
+
+custom_address_book.searchpage:
+  path: '/search '
+  defaults:
+    _controller: '\Drupal\custom_address_book\Controller\CustomAddressBookController::searchpage'
+    _title: 'Search Address Book'
+  requirements:
+    _permission: 'access content' 
+
+

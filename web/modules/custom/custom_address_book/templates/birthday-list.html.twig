@@ -1,13 +1,13 @@
-
-<div>
+{{ attach_library('custom_address_book/custom_block_css') }}
+<div class='custom-block' >
     {% if names %}
-    <h5><strong>Happy Birthday!!!</strong></h5>
-        <ul>
+    <h5 class='block-heading'><strong>Happy Birthday!!!</strong></h5>
+        <ul class='block-list'>
         {% for names in names %}
-            <li>{{ names }}</li>
+            <li class='block-items'>{{ names }}</li>
         {% endfor %}
         </ul>
     {% else %}
-    <p>No Birthdays Today!</p>
+    <p class= 'block-noitem'>No Birthdays Today!</p>
   {% endif %}
 </div>

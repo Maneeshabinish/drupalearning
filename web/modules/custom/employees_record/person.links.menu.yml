@@ -1,0 +1,7 @@
+# Events menu items definition
+entity.person.collection:
+  title: 'List of Persons'
+  route_name: entity.person.collection
+  description: 'List Person entities'
+  parent: system.admin_structure
+  weight: 100

@@ -1,0 +1,33 @@
+/* styles.css */
+
+/* Style for the block wrapper */
+.custom-block{
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the list of names */
+  .block-list {
+    list-style-type: disc ;
+    padding: 0;
+  }
+
+    /* Style for the heading */
+    .block-heading {
+        font-size: large;
+        font-style: italic;
+        color: green;
+        text-align: center;
+      }
+
+  
+  /* Style for each name item */
+  .block-items {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #15d946;
+  }
+  

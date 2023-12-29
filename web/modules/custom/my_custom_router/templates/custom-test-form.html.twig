@@ -1,0 +1,18 @@
+{#
+  Template for the test form.
+  - Available variables:
+    - form: The form array.
+#}
+
+{{ attach_library('my_custom_router/custom_form_css') }}
+
+<div class="custom-form-wrapper">
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  {{ form }}
+
+  {# Add custom styling or markup for form elements #}
+
+
+</div>

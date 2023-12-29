@@ -1,0 +1,74 @@
+/* Add this CSS to your theme's custom stylesheet */
+
+.form-item__label {
+    color: blue; /* Change to your desired color */
+  }
+
+
+input[class*="form-element--type"]{
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Adjust the value to control the roundness */
+    padding: 8px;
+    margin-bottom: 10px; /* Adjust as needed */
+    } 
+   
+
+.form-element--type-select{
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Adjust the value to control the roundness */
+    padding: 18px;
+    margin-bottom: 20px; /* Adjust as needed */
+    }
+
+.form-element--type-textarea{
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Adjust the value to control the roundness */
+    padding: 18px;
+    margin-bottom: 20px; /* Adjust as needed */
+    }
+
+/* Apply styles to the fieldset wrapper */
+.fieldset.fieldset--group {
+
+    border-radius: 10px; /* Adjust the value to control the roundness */
+    padding: 10px;
+    background-color:white; /* Change to your desired background color */
+  }
+  
+  /* Style the legend within the fieldset */
+  .fieldset.fieldset--group .fieldset__legend {
+    color: #fff; /* Change to your desired text color */
+  }
+
+/* Apply styles to the submit button */
+.button.js-form-submit.form-submit {
+    background-color: #3498db; /* Change to your desired background color */
+    color: #fff; /* Change to your desired text color */
+    border: 1px solid #3498db; /* Change to your desired border color */
+    border-radius: 10px; /* Adjust the value to control the roundness */
+    padding: 20px 30px; /* Adjust as needed */
+    cursor: pointer; /* Add a pointer cursor for better user interaction */
+  }
+
+  .form-checkbox.form-boolean.form-boolean--type-checkbox {
+    appearance: none; /* Remove default checkbox appearance */
+    -webkit-appearance: none; /* For Webkit browsers */
+    -moz-appearance: none; /* For Firefox */
+  
+    width: 20px; /* Adjust the width and height to control the size of the circle */
+    height: 20px; /* Adjust the width and height to control the size of the circle */
+    border: 2px solid #3498db; /* Change to your desired border color */
+    border-radius: 50%; /* Create a circular shape */
+    outline: none; /* Remove focus outline */
+  
+    cursor: pointer;
+  }
+  
+  /* Style the checked state of the checkbox */
+  .form-checkbox.form-boolean.form-boolean--type-checkbox:checked {
+    background-color: #3498db; /* Change to your desired background color when checked */
+    border-color: #3498db; /* Change to your desired border color when checked */
+  }
+  
+  
+  

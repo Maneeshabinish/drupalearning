@@ -1,0 +1,5 @@
+custom_block_css:
+  version: VERSION
+  css:
+    theme:
+      css/block-styling.css: {}

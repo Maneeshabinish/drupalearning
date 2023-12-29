@@ -22,6 +22,7 @@ class ComposerStaticInit2455ddb22639e9052a9885143c7c28b1
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2f69d3914119f042cca9e44442d5ce95' => __DIR__ . '/../..' . '/web/core/includes/bootstrap.inc',
+        '61ba3e92ef91a7a0f1cc260ebd9290e4' => __DIR__ . '/..' . '/openai-php/client/src/OpenAI.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -70,9 +71,18 @@ class ComposerStaticInit2455ddb22639e9052a9885143c7c28b1
             'Psr\\Cache\\' => 10,
             'Peast\\' => 6,
         ),
+        'O' => 
+        array (
+            'OpenAI\\' => 7,
+        ),
         'M' => 
         array (
             'Masterminds\\' => 12,
+        ),
+        'H' => 
+        array (
+            'Http\\Message\\MultipartStream\\' => 29,
+            'Http\\Discovery\\' => 15,
         ),
         'G' => 
         array (
@@ -251,9 +261,21 @@ class ComposerStaticInit2455ddb22639e9052a9885143c7c28b1
         array (
             0 => __DIR__ . '/..' . '/mck89/peast/lib/Peast',
         ),
+        'OpenAI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/openai-php/client/src',
+        ),
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'Http\\Message\\MultipartStream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/multipart-stream-builder/src',
+        ),
+        'Http\\Discovery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/discovery/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

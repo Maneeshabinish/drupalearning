@@ -26,6 +26,9 @@ class TestForm extends FormBase {
   }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
+
+      $form['attached']['library'][]='custom_form_css';
+      $form['#theme'] = 'custom_test_form';
       $form['text'] = [
 
         '#type' => 'textfield',

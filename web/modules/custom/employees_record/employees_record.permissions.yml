@@ -1,0 +1,28 @@
+# Permission for the employees_record module
+
+# Permission for the import page
+'Access import page':
+  title: Access Import Page
+
+#Permission for the person entity
+
+administer person entities:
+  title: 'Administer person entities'
+
+add person entities:
+  title: 'Create new person entities'
+
+delete person entities:
+  title: 'Delete person entities'
+ 
+edit event entities:
+  title: 'Edit person entities'
+
+#Permission for the salary listing page
+
+'View  content':
+  title: View content
+
+'Modify content':
+  title: Modify content
+

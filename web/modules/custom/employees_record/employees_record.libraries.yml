@@ -1,0 +1,8 @@
+employees_record/employees_record:
+  version: VERSION
+  js:
+    js/personalinfoaajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.dialog.ajax 
+    - core/drupal

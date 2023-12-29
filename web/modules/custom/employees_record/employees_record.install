@@ -1,0 +1,39 @@
+<?php
+
+
+/**
+ * Implements hook_schema().
+ */
+function employees_record_schema() {
+  $schema['person_salary'] = [
+    'description' => 'Lists employee salary',
+    'fields' => [
+      'aid' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Person ID',
+      ],
+      'month' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Month',
+      ],
+      'year' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Year',
+      ],
+        'salary' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'The salary amount.',
+      ],
+    ],
+
+    'primary key' => ['aid'],
+  ];
+
+  return $schema;
+}

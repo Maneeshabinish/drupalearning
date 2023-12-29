@@ -4,4 +4,4 @@ description: 'Demonstrates how to display a page at a given URL.'
 package: custom
 core_version_requirement: ^9 || ^10
 libraries:
-  - my_custom_router/list
+  - my_custom_router/custom-form

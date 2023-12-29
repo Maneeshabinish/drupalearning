@@ -12,6 +12,21 @@ function custom_address_book_theme($existing, $type, $theme, $path) {
       ],
       'template' => 'address-book-entries', // This corresponds to the template file.
     ],
+
+    'custom_form'  => [
+
+      'render element' => 'form',
+      'template' => 'custom-form',
+
+    ],
+  
+   'search_result_table' => [
+      'variables' => [
+        'header' => NULL,
+        'rows' => NULL,
+      ],
+      'template' => 'search-result-table', // This corresponds to the template file.
+    ],
     
     'birthday_list' => [
       'variables' => [

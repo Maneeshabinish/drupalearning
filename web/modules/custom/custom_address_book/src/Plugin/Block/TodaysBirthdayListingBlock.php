@@ -17,21 +17,18 @@ use Drupal\Core\Database\Database;
  */
 class TodaysBirthdayListingBlock extends BlockBase {
 
-  /**
+   /**
    * {@inheritdoc}
    */
   public function build() {
     // Get today's date.
     $today = \Drupal::time()->getCurrentTime();
-    $today_date = date('Y-m-d', $today);
+    $today_month_day = date('md', $today); // Only extract month and day.
 
-
-    // Query the database for birthdays today.
+    // Query the database for names and dates of birth.
     $query = \Drupal::database()->select('address_entry', 'a')
       ->fields('a', ['name', 'dob'])
-      ->condition('a.dob', $today_date . '%', 'LIKE')
       ->execute();
-
 
     $result = $query->fetchAll();
 
@@ -39,31 +36,38 @@ class TodaysBirthdayListingBlock extends BlockBase {
     $names = [];
 
     // Build the output.
-    
-    if (!empty($result)) {     
-
+    if (!empty($result)) {
       foreach ($result as $row) {
-        $names[] = $row->name;
+        $dob_month_day = date('md', strtotime($row->dob)); // Extract month and day from dob.
+
+        // Check if the dob matches today's month and day.
+        if ($dob_month_day === $today_month_day) {
+          $names[] = $row->name;
+        }
       }
 
       $output = [
         '#theme' => 'birthday_list',
-        '#names' => $names,        
+        '#names' => $names, 
+        '#attached' => [
+          'library' => [
+            'custom_address_book/custom_block_css', // Adjust this to your actual library name.
+          ],
+        ],       
       ];
-
-      
-    }else {
+    } else {
       // No birthdays today.
       $output = [
         '#theme' => 'birthday_list',
         '#names' => [],
+        '#attached' => [
+          'library' => [
+            'custom_address_book/custom_block_css', // Adjust this to your actual library name.
+          ],
+        ],       
       ];
     }
 
-
     return $output;
-    
-    
   }  
-
 }

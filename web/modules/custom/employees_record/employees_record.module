@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function employees_record_theme($existing, $type, $theme, $path) {
+  return [
+    'salary_listing' => [
+      'variables' => [
+        'header' => NULL,
+        'rows' => NULL,
+      ],
+      'template' => 'salary-listing', // This corresponds to the template file.
+    ],
+
+  ];
+}

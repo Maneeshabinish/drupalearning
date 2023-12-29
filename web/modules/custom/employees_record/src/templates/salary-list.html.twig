@@ -1,0 +1,31 @@
+<table>
+   <a href="{{ url_for('employees_record.operations', id=row.id, operation='add') }}">Add Salary Detail</a> 
+  <thead>
+    <tr>
+      {% for key, label in header %}
+        <th>{{ label }}</th>
+      {% endfor %}
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if rows is empty %}
+      <tr>
+        <td colspan="{{ header|length + 1 }}">{{ empty }}</td>
+      </tr>
+    {% else %}
+      {% for row in rows %}
+        <tr>
+          {% for key, value in row %}
+            <td>{{ value }}</td>
+          {% endfor %}
+          <td>
+            <a href="{{ url_for('employees_record.operations', id=row.id, operation='edit') }}">Edit</a>
+            <a href="{{ url_for('employees_record.operations', id=row.id, operation='delete') }}">Delete</a>
+            <!-- Add links for other CRUD operations as needed -->
+          </td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </tbody>
+</table>

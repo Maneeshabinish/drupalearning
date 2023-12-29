@@ -1,0 +1,5 @@
+name: Custom Employees Salary Record Module
+type: module
+description: 'A custom module to handle employees salary record in Drupal'
+package: custom
+core_version_requirement: ^9 || ^10

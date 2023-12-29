@@ -1,0 +1,8 @@
+custom_form_css:
+  version: VERSION
+  css:
+    theme:
+      css/custom-form.css: {}
+
+
+
