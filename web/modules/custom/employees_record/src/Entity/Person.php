@@ -13,10 +13,10 @@ use Drupal\user\UserInterface;
 /**
  * Defines the Person entity.
  *
- * @ingroup Person
+ * @ingroup person
  *
  * @ContentEntityType(
- *   id = "Person",
+ *   id = "person",
  *   label = @Translation("Person"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
@@ -193,7 +193,7 @@ class Person extends ContentEntityBase implements PersonInterface {
         'weight' => -5,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'integer_textfield',
+        'type' => 'integer',
         'weight' => -5,
       ])
       ->setDisplayConfigurable('form', TRUE)
@@ -222,7 +222,7 @@ class Person extends ContentEntityBase implements PersonInterface {
       ->setRequired(TRUE);
 
       $fields['age'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('User Id'))
+      ->setLabel(t('Age'))
       ->setDescription(t('The age of the person.'))
       ->setSettings([
         'max_length' => 50,
@@ -235,7 +235,7 @@ class Person extends ContentEntityBase implements PersonInterface {
         'weight' => -3,
       ])
       ->setDisplayOptions('form', [
-        'type' => 'integer_textfield',
+        'type' => 'integer',
         'weight' => -3,
       ])
       ->setDisplayConfigurable('form', TRUE)

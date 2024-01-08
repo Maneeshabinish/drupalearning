@@ -1,4 +1,4 @@
-# Events menu items definition
+# Person menu items definition
 entity.person.collection:
   title: 'List of Persons'
   route_name: entity.person.collection

@@ -7,34 +7,43 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Drupal\mymodule\Form\ImportForm;
 use Drupal\Core\Database\Connection;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormBuilderInterface;
-
+use Drupal\employees_record\Form\CsvImportForm;
+use Drupal\Core\Render\RendererInterface;
 
 
 class EmployeesRecordController extends ControllerBase {
 
-  /**
+   /**
    * The form builder.
    *
    * @var \Drupal\Core\Form\FormBuilderInterface
    */
   protected $formBuilder;
 
-/**
+  /**
    * The database connection.
    *
    * @var \Drupal\Core\Database\Connection
    */
+  protected $database;
+
+  /**
+   * The renderer service.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
 
   /**
    * ImportController constructor.
    */
-  public function __construct(FormBuilderInterface $formBuilder, Connection $database) {
+  public function __construct(FormBuilderInterface $formBuilder, Connection $database, RendererInterface $renderer) {
     $this->formBuilder = $formBuilder;
     $this->database = $database;
+    $this->renderer = $renderer;
   }
 
   /**
@@ -43,7 +52,8 @@ class EmployeesRecordController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('form_builder'),
-      $container->get('database')
+      $container->get('database'),
+      $container->get('renderer')
     );
   }
 
@@ -62,10 +72,10 @@ class EmployeesRecordController extends ControllerBase {
     }
 
     // Render the file upload form.
-    $form = $this->formBuilder->getForm(ImportForm::class);
+    $form = $this->formBuilder->getForm(CsvImportForm::class);
 
     return [
-      '#markup' => render($form),
+      '#markup' => $this->renderer->render($form),
     ];
   }
 
