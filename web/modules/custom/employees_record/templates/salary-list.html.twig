@@ -1,5 +1,6 @@
+
 <table>
-   <a href="{{ url_for('employees_record.operations', id=row.id, operation='add') }}">Add Salary Detail</a> 
+   <a href="{{ url('employees_record.add')}}">Add </a> 
   <thead>
     <tr>
       {% for key, label in header %}
@@ -20,9 +21,9 @@
             <td>{{ value }}</td>
           {% endfor %}
           <td>
-            <a href="{{ url_for('employees_record.operations', id=row.id, operation='edit') }}">Edit</a>
-            <a href="{{ url_for('employees_record.operations', id=row.id, operation='delete') }}">Delete</a>
-            <!-- Add links for other CRUD operations as needed -->
+            <a href="{{ url('employees_record.edit', {'id':row.id}) }}">Edit</a>
+            <a href="{{ url('employees_record.delete',{'id':row.id}) }}">Delete</a>
+          
           </td>
         </tr>
       {% endfor %}

@@ -36,8 +36,8 @@ class PersonListBuilder extends EntityListBuilder {
       'entity.person.canonical',
       ['person' => $entity->id()]
     );  
-    $row['location'] = $entity->location();
-    $row['age'] = $entity->age();   
+    $row['location'] =  $entity->location->getValue()['0']['value'];
+    $row['age'] =  $entity->age->getValue()['0']['value'];   
        
    
     return $row + parent::buildRow($entity);

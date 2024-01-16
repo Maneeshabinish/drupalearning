@@ -130,33 +130,32 @@ class Person extends ContentEntityBase implements PersonInterface {
      * {@inheritdoc}
      */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+
     $fields = parent::baseFieldDefinitions($entity_type);
 
-
-
-     $fields['author_user_id'] = BaseFieldDefinition::create('entity_reference')
-       ->setLabel(t('Authored by'))
-       ->setDescription(t('The user ID of author of the contact.'))
-       ->setRevisionable(TRUE)
-       ->setSetting('target_type', 'user')
-       ->setSetting('handler', 'default')
-       ->setDisplayOptions('view', [
-         'label' => 'above',
-         'type' => 'author',
-         'weight' => 0,
-       ])
-       ->setDisplayOptions('form', [
-         'type' => 'entity_reference_autocomplete',
-         'weight' => 5,
-         'settings' => [
-           'match_operator' => 'CONTAINS',
-           'size' => '60',
-           'autocomplete_type' => 'tags',
-           'placeholder' => '',
-         ],
-       ])
-       ->setDisplayConfigurable('form', TRUE)
-       ->setDisplayConfigurable('view', TRUE);
+    $fields['author_user_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Authored by'))
+      ->setDescription(t('The user ID of author of the contact.'))
+      ->setRevisionable(TRUE)
+      ->setSetting('target_type', 'user')
+      ->setSetting('handler', 'default')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'author',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
@@ -179,7 +178,7 @@ class Person extends ContentEntityBase implements PersonInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-      $fields['id'] = BaseFieldDefinition::create('integer')
+    $fields['id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Id'))
       ->setDescription(t('The id of the person.'))
       ->setSettings([
@@ -200,7 +199,7 @@ class Person extends ContentEntityBase implements PersonInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-      $fields['location'] = BaseFieldDefinition::create('string')
+    $fields['location'] = BaseFieldDefinition::create('string')
       ->setLabel(t('location'))
       ->setDescription(t('The location of the person.'))     
       ->setSettings([
@@ -221,7 +220,7 @@ class Person extends ContentEntityBase implements PersonInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-      $fields['age'] = BaseFieldDefinition::create('integer')
+    $fields['age'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Age'))
       ->setDescription(t('The age of the person.'))
       ->setSettings([

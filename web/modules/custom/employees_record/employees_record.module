@@ -5,12 +5,17 @@
  */
 function employees_record_theme($existing, $type, $theme, $path) {
   return [
-    'salary_listing' => [
+    'salary_list' => [
       'variables' => [
         'header' => NULL,
         'rows' => NULL,
       ],
-      'template' => 'salary-listing', // This corresponds to the template file.
+      'template' => 'salary-list', // This corresponds to the template file.
+    ],
+
+    'personal_info_form' => [
+      'render element' => 'form',
+      'template' => 'personal-info-form',
     ],
 
   ];

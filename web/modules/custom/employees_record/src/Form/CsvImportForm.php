@@ -95,14 +95,12 @@ class CsvImportForm extends FormBase {
       $file->save();
     }
 
-  // Check if the file entity exists and get its ID.
+    // Check if the file entity exists and get its ID.
  
     $file_id = $file->id();
-    error_log('File uploaded with ID: ' . $file_id);
-
+   
     $csv_data = $this->readCsv($file);
 
-  error_log('csv data'. print_r($csv_data, true));
     // Start the batch process to import CSV data.
     $operation = [];
     foreach($csv_data as $node_data){

@@ -97,7 +97,8 @@ class EmployeesRecordController extends ControllerBase {
    * @return array
    *   The render array representing the page.
    */
-  public function salaryList(Request $request) {
+  public function salaryList() {
+
     $header = [
       'id' => $this->t('ID'),
       'name' => $this->t('Name'),
@@ -107,9 +108,9 @@ class EmployeesRecordController extends ControllerBase {
     ];
 
     $rows = $this->buildSalaryRows();
-
+ 
     $table = [
-      '#theme' => 'salary_listing',
+      '#theme' => 'salary_list',
       '#header' => $header,
       '#rows' => $rows,
       '#empty' => $this->t('No entries found'),
@@ -125,31 +126,39 @@ class EmployeesRecordController extends ControllerBase {
    */
   protected function buildSalaryRows() {
 
-    $query = $this->database->select('person_salary', 'ps')
-      ->fields('ps', ['aid', 'month', 'year', 'salary'])
-      ->fields('p', ['name']) // Assuming 'name' is the field in the Person entity you want to display.
-      ->condition('ps.aid', 'p.id') // Join condition between person_salary and Person entities.
-      ->extend('TableSort')
-      ->orderByHeader($this->header)
-      ->limit(50)
-      ->addTag('node_access')
-      ->execute();
+    $query = $this->database->select('person_salary', 'ps');
+    $query ->innerjoin('person','p', 'p.id = ps.aid');
+    $query ->fields('ps');
+    $query ->fields('p', ['name']); 
 
+    $records =  $query ->execute() ->fetchAll();
+ 
     $rows = [];
-
-    foreach ($query as $row) {
+    foreach ($records as $record) {
       $rows[] = [
-        'id' => $row->aid,
-        'name' => $row->name,
-        'month' => $row->month,
-        'year' => $row->year,
-        'salary' => $row->salary,
-      ];
+        'id' => $record->aid,
+        'name' => $record->name, // Assuming 'name' is the field in the 'person' table.
+        'month' => $record->month,
+        'year' => $record->year,
+        'salary' => $record->salary,
+      ]; 
     }
 
     return $rows;
+  }  
+
+  /**
+   * Returns the content for the personal-information page.
+   */
+  public function personalinfo() {
+
+    // Build the form using the Form API.
+    $form = \Drupal::formBuilder()->getForm('Drupal\employees_record\Form\PersonalInfoForm');
+
+    return $form;
   }
 
+ 
 }
 
 

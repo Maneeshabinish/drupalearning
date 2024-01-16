@@ -9,7 +9,7 @@ employees_record.importPage:
 employees_record.personalinfo:
   path: '/personal-information'
   defaults:
-    _form: '\Drupal\employees_record\Form\PersonalInfoForm'
+    _controller: '\Drupal\employees_record\Controller\EmployeesRecordController::personalinfo'
     _title: 'Personal Information'
   requirements:
     _permission: 'access content'
@@ -21,11 +21,27 @@ employees_record.salarylist:
     _title: 'Salary Record'
   requirements:
     _permission: 'View content'
-       
-employees_record.operations:
-  path: '/salaryrecord/{id}/{operation}'
+
+employees_record.add:
+  path: '/salaryrecord/add'
   defaults:
-    _form: '\Drupal\employees_record\Form\SalaryForm'
-    _title: 'Operations Form'
+    _form: '\Drupal\employees_record\Form\SalaryAddForm'
+    _title: 'Update Form'
+  requirements:
+    _permission: 'Modify content'    
+       
+employees_record.edit:
+  path: '/salaryrecord/edit/{id}'
+  defaults:
+    _form: '\Drupal\employees_record\Form\SalaryEditForm'
+    _title: 'Edit Form'
   requirements:
     _permission: 'Modify content'
+
+employees_record.delete:
+  path: '/salaryrecord/delete/{id}'
+  defaults:
+    _form: '\Drupal\employees_record\Form\SalaryDeleteForm'
+    _title: 'Delete Form'
+  requirements:
+    _permission: 'Modify content'    

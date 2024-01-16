@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\employees_record\Batch;
 
 use Drupal\node\Entity\Node;
@@ -23,8 +24,7 @@ class CustomBatch {
             'name' => $name,
             'location' => $location,
             'age' => $age,
-        ]);
-        
+        ]);        
 
         $node->save();
         $context['result'][] = $node_data;
